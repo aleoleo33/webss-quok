@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    background: #ffffff;
+    color: #0a0a0a;
+  }
+
+  #root {
+    height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 99px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+  }
+
+  .workspace-grid {
+    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .canvas-surface {
+    background-color: #fafaf9;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+
+@theme {
+  --color-primary: #171717;
+  --color-secondary: #f3f4f6;
+  --color-accent: #f59e0b;
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-text: #171717;
+  --color-text-muted: #737373;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+  }
+  
+  html, body {
+    @apply h-full antialiased text-slate-900 bg-white;
+  }
+  
+  #root {
+    @apply h-full;
+  }
+}
